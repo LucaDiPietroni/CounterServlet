@@ -36,6 +36,9 @@ public class CounterServlet extends HttpServlet {
 				licz = 0;
 				session.setAttribute("sessionAttribute", actualText);
 			}
+		} else {
+			actualText = "sample_text";
+			session.setAttribute("sessionAttribute", "sample_text");
 		}
 		
 		response.getWriter().append("<!DOCTYPE html>")
@@ -45,7 +48,7 @@ public class CounterServlet extends HttpServlet {
 			.append("</head>")
 			.append("<body>")
 			.append("<h2>Licznik</h2>")
-			.append("<form action=\"CounterServlet\"")
+			.append("<form action=\"CounterServlet\" method=\"post\"")
 			.append("style=\"border-style:solid;")
 			.append("border-width:1px;")
 			.append("width:300px;")
@@ -58,8 +61,8 @@ public class CounterServlet extends HttpServlet {
 			.append("<br><br>")
 			.append("<input type=\"submit\" name = 'btn' value=\"Wyslij\">")
 			.append("</form>")
-			.append("<p>jak nacisniesz przycisk \"Wyslij\", zwieksza siê licznik.</p>")
-			.append("<p>jak zmienisz nazwe i nacisniesz przycisk \"Wyslij\", licznik siê wyzeruje.</p>")
+			.append("<p>jak naciœniesz przycisk \"Wyœlij\", zwiêksza siê licznik.</p>")
+			.append("<p>jak zmienisz nazwê i naciœniesz przycisk \"Wyœlij\", licznik siê wyzeruje.</p>")
 			.append("</body>")
 			.append("</html>");
 		licz++;
